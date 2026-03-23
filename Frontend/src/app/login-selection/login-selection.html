@@ -1,0 +1,42 @@
+<div class="auth-selection-wrapper">
+  <nav class="auth-nav animate-in">
+    <button class="btn-back-modern" routerLink="/home">
+      <span class="icon">←</span> Back to Home
+    </button>
+    <div class="system-status">
+      <span class="status-dot"></span> System Online
+    </div>
+  </nav>
+
+  <div class="hero-text-section animate-in">
+    <h2 class="elite-title">Welcome to <span class="highlight-teal">MediCare</span></h2>
+    <p class="elite-subtitle">Enter your credentials to access your clinical workspace.</p>
+  </div>
+
+  <div class="elite-portal-grid">
+    <div class="elite-card login-card animate-slide-up" style="--delay: 0.1s">
+      <div class="card-badge">Secure Portal</div>
+      
+      <form class="unified-form" (ngSubmit)="login()">
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" [(ngModel)]="email" placeholder="Enter your email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" [(ngModel)]="password" placeholder="Enter your password" required>
+        </div>
+
+        <button type="submit" class="btn-elite btn-emerald login-submit" [disabled]="isLoading">
+          {{ isLoading ? 'Authenticating...' : 'Secure Login' }}
+        </button>
+      </form>
+
+      <div class="registration-prompt">
+        <p>Are you a new patient?</p>
+        <a routerLink="/patient/auth" class="register-link">Register for a Patient Account</a>
+      </div>
+    </div>
+  </div>
+</div>
