@@ -9,7 +9,8 @@ import { BehaviorSubject, Observable, tap } from 'rxjs';
   providedIn: 'root',
 })
 export class PatientService {
-  private apiUrl = 'http://localhost:5000/patient';
+  // private apiUrl = 'http://localhost:5000/patient';
+  private apiUrl = 'https://hopital-management-system-mean.vercel.app/patient';
 
   private currentPatientSubject = new BehaviorSubject<Patient | null>(null);
   public currentPatient$ = this.currentPatientSubject.asObservable();
