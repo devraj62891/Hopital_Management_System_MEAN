@@ -7,8 +7,8 @@ import { PatientRecord } from '../model/patient-history';
   providedIn: 'root'
 })
 export class MedicalHistoryService {
-  // private apiUrl = 'http://localhost:5000/doctor';
-  private apiUrl = 'https://hopital-management-system-mean.vercel.app/doctor';
+  private apiUrl = 'http://localhost:5000/doctor';
+  // private apiUrl = 'https://hopital-management-system-mean.vercel.app/doctor';
   private patientsSubject = new BehaviorSubject<PatientRecord[]>([]);
   patients$ = this.patientsSubject.asObservable();
 

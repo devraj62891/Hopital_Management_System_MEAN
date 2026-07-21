@@ -9,12 +9,12 @@ import { BehaviorSubject, Observable, tap } from 'rxjs';
 })
 export class DoctorService {
   private appointments: Appointment[] = [];
-  // private apiUrl = 'http://localhost:5000/doctor';
-  // private authUrl = 'http://localhost:5000/auth';
+  private apiUrl = 'http://localhost:5000/doctor';
+  private authUrl = 'http://localhost:5000/auth';
 
   //for deployemnt on vercel
-  private apiUrl = 'https://hopital-management-system-mean.vercel.app/doctor';
-  private authUrl = 'https://hopital-management-system-mean.vercel.app/auth';
+  // private apiUrl = 'https://hopital-management-system-mean.vercel.app/doctor';
+  // private authUrl = 'https://hopital-management-system-mean.vercel.app/auth';
 
   private currentDoctorSubject = new BehaviorSubject<Doctor | null>(null);
   public currentDoctor$ = this.currentDoctorSubject.asObservable();
